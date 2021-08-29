@@ -1,19 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 .card {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     line-height: 1.5;
     background-color: #f4f4f4;
+    display:flex;
+    flex-direction: column;
+    border-radius: .188rem;
+    .truncate {
+        max-height: 5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        line-clamp: 4;
+    }
     .card-img {
         width: 100%;
-        display: block;
+        display:block;
     }
-    .card-title h4 {
-        color: $chalet-green;
+    .card-heading  {
+        h4 {
+            color: $chalet-green;
+        }
+        .gps-coords {
+            color: #545454;
+            font-size: .7rem;
+            font-weight: bold;
+        }
     }
     .card-content {
-        font-size: .9rem;
-        color: #333;
+        font-family: "Roboto", sans-serif;
+        .card-subheading {
+            color: $chalet-green;
+        }
+        .card-subcontent {
+            font-size: .8rem;
+            font-weight: normal;
+            margin-bottom: .5rem !important;
+            color: #333;
+        }
+        .card-subcontent ul li {
+            list-style: none;
+        }
     }
-    .card-content, .card-link, .card-title {
-        padding: 5px 15px !important;
+    .card-info {
+        margin-top: auto !important;
+        text-align: center;
+        font-size: .8rem;
+        font-weight: normal;
+        .card-link {
+            padding-bottom: 0.938rem !important;
+        }
+        .btn {
+            border: none;
+            background-color: $chalet-green;
+            cursor: pointer;
+            color: #f4f4f4;
+            padding: 0.5rem 0.938rem !important;
+            display: block;
+            width: 100%;
+            border-radius: .188rem;
+            &:hover {
+                filter: brightness(1.5)
+            }
+        }
+    }
+    .card-content, .card-info, .card-heading {
+        padding: 0.313rem 0.938rem !important;
     }
 }

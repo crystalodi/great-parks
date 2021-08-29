@@ -1,16 +1,31 @@
 <template>
     <div class="card">
         <img :src="cardImage.url" :alt="cardImage.alt" class="card-img">
-        <div class="card-title">
+        <div class="card-heading">
             <h4>{{park.name}}</h4>
+            <span class="gps-coords">
+                {{park.latitude}} N {{park.longitude}} W
+            </span>
         </div>
         <div class="card-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, ipsa!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel cum et tempore optio cumque laudantium aliquam nobis eveniet quibusdam ab.</p>
+            <div class="card-subheading">
+                <h5>Description</h5>
+            </div>
+            <div class="card-subcontent truncate" :title="park.description">
+                {{park.description}}
+            </div>
+            <div class="card-subheading">
+                <h5>Activities</h5>
+            </div>
+            <div class="card-subcontent">
+                <ul>
+                    <li v-for="activity of park.activities" :key="activity.id">{{activity.name}}</li>
+                </ul>
+            </div>
         </div>
         <div class="card-info">
             <div class="card-link">
-                <a href="#">Visit Park</a>
+                <a :href="park.url" target="_blank" class="btn">View More Information</a>
             </div>
         </div>
     </div>
