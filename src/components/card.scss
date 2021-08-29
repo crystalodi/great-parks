@@ -1,0 +1,19 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    line-height: 1.5;
+    background-color: #f4f4f4;
+    .card-img {
+        width: 100%;
+        display: block;
+    }
+    .card-title h4 {
+        color: $chalet-green;
+    }
+    .card-content {
+        font-size: .9rem;
+        color: #333;
+    }
+    .card-content, .card-link, .card-title {
+        padding: 5px 15px !important;
+    }
+}

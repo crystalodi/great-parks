@@ -1,0 +1,26 @@
+#logo {
+    background: $darkblue; //style later
+    height: 10vh;
+}
+
+#hero {
+    background: url("./assets/img/hero-bg.jpg") no-repeat center center/cover;
+    height: 50vh;
+    display:flex;
+    .hero-content {
+        color: white;
+        text-align: center;
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1.2em;
+        }
+    }
+}
+
+#parks {
+    display: grid;
+    background-color: $conch;
+    padding: 50px 30px !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}

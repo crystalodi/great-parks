@@ -15,41 +15,31 @@
       </div>
     </div>
   </header>
+  <section id="parks">
+      <Card v-for="park of parks" :key="park.id" :park="park"/>
+  </section>
 </template>
 
 <script>
-import axios from "axios";
+import Card from "./components/Card.vue"
+import {ParkService} from "./services/park-service.js";
 export default {
   name: "App",
+  components: {
+    Card,
+  },
   data() {
     return {
       parks: []
     }
   },
-  created () {
-    console.log(axios)
+  async created () {
+    this.parks = await ParkService.getParks();
   },
 }
 </script>
 
 <style lang="scss">
-  #logo {
-    background: $primary; //style later
-  }
-
-  #hero {
-    background: url("./assets/img/hero-bg.jpg") no-repeat center center/cover;
-    height: 400px;
-    .hero-content {
-      text-align: center;
-      color: white;
-      vertical-align: middle;
-      h1 {
-        padding-top: 140px !important;
-        font-size: 60px;
-        line-height: 1.2em;
-      }
-    }
-  }
+  @import "./app.scss"
 </style>
 
